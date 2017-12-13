@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>uap10.0</TargetFramework>
+        <Authors>NeoSmart Technologies, Mahmoud Al-Qudsi</Authors>
+        <Company>NeoSmart Technologies</Company>
+        <Product>UWP Modifier Keys</Product>
+        <Description>A simple library for Universal Windows Applications (UWP/UAP) providing easy access to information about pressed modifier keys in KeyUp/KeyDown routines, including the ctrl/control, alt, shift, and Windows keys. An extension method in NeoSmart.Uwp.ModifierKeys extends KeyRoutedEventArgs with a ModifierKeys() method returning an enum of depressed modifier keys.</Description>
+        <Copyright>NeoSmart Technologies 2017</Copyright>
+        <PackageLicenseUrl>https://cdn.rawgit.com/neosmart/UwpModifierKeys/master/LICENSE</PackageLicenseUrl>
+        <PackageProjectUrl>https://github.com/neosmart/UwpModifierKeys</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/neosmart/UwpModifierKeys</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <PackageTags>modifer keys, KeyRoutedEventArgs, UWP, UAP, universal windows, windows 10</PackageTags>
+        <PackageReleaseNotes>Initial release</PackageReleaseNotes>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    </PropertyGroup>
+    <ItemGroup>
+        <PackageReference Include="System.ValueTuple" Version="4.4.0" />
+    </ItemGroup>
+    <PropertyGroup Condition="'$(TargetFramework)' == 'uap10.0'">
+        <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
+        <NugetTargetMoniker>UAP,Version=v10.0</NugetTargetMoniker>
+        <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
+        <TargetPlatformVersion>10.0.16299.0</TargetPlatformVersion>
+        <TargetPlatformMinVersion>10.0.10240.0</TargetPlatformMinVersion>
+        <TargetFrameworkIdentifier>.NETCore</TargetFrameworkIdentifier>
+        <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
+        <DefineConstants>$(DefineConstants);WINDOWS_UWP</DefineConstants>
+        <LanguageTargets>$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets</LanguageTargets>
+        <ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>None</ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
+    </PropertyGroup>
+
+    <ItemGroup Condition=" '$(TargetFramework)' == 'uap10.0' ">
+        <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform " Version="5.2.2" />
+    </ItemGroup>
+</Project>
