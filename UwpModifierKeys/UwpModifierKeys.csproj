@@ -1,11 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
-        <TargetFramework>uap10.0</TargetFramework>
+        <TargetFramework>netstandard2.0</TargetFramework>
         <Authors>NeoSmart Technologies, Mahmoud Al-Qudsi</Authors>
         <Company>NeoSmart Technologies</Company>
         <Product>UWP Modifier Keys</Product>
+      <PackageId>UwpModifierKeys</PackageId>
+      <Version>1.1.0</Version>
         <Description>A simple library for Universal Windows Applications (UWP/UAP) providing easy access to information about pressed modifier keys in KeyUp/KeyDown routines, including the ctrl/control, alt, shift, and Windows keys. An extension method in NeoSmart.Uwp.ModifierKeys extends KeyRoutedEventArgs with a ModifierKeys() method returning an enum of depressed modifier keys.</Description>
-        <Copyright>NeoSmart Technologies 2017</Copyright>
+        <Copyright>NeoSmart Technologies 2017-2020</Copyright>
         <PackageLicenseUrl>https://cdn.rawgit.com/neosmart/UwpModifierKeys/master/LICENSE</PackageLicenseUrl>
         <PackageProjectUrl>https://github.com/neosmart/UwpModifierKeys</PackageProjectUrl>
         <RepositoryUrl>https://github.com/neosmart/UwpModifierKeys</RepositoryUrl>
@@ -17,6 +19,12 @@
     <ItemGroup>
         <PackageReference Include="System.ValueTuple" Version="4.4.0" />
     </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Windows">
+      <HintPath>C:\Program Files (x86)\Windows Kits\10\UnionMetadata\Windows.winmd</HintPath>
+      <IsWinMDFile>true</IsWinMDFile>
+    </Reference>
+  </ItemGroup>
     <PropertyGroup Condition="'$(TargetFramework)' == 'uap10.0'">
         <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
         <NugetTargetMoniker>UAP,Version=v10.0</NugetTargetMoniker>
